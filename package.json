@@ -1,0 +1,28 @@
+{
+  "name": "public-api-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for accessing public APIs",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.6.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.0"
+  },
+  "keywords": ["mcp", "api", "server", "public-apis"],
+  "author": "Your Name",
+  "license": "MIT"
+}
