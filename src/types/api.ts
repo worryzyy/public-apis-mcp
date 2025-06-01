@@ -18,6 +18,38 @@ export const ApiResponseSchema = z.object({
 export type ApiEntry = z.infer<typeof ApiCategorySchema>;
 export type ApiResponse = z.infer<typeof ApiResponseSchema>;
 
+
+export interface APIEntry {
+  API: string;
+  Description: string;
+  Auth: string;
+  HTTPS: boolean;
+  Cors: string;
+  Link: string;
+  Category: string;
+}
+
+export interface APIData {
+  count: number;
+  entries: APIEntry[];
+}
+
+export interface APIDatabase {
+  [category: string]: APIData;
+}
+
+// 工具返回类型
+export interface ToolResponse {
+  content: Array<{ type: string; text: string }>;
+}
+
+// 认证头信息返回类型
+export interface AuthHeader {
+  setup: string;
+  header: string;
+  curl: string;
+}
+
 export interface ApiFilter {
   category?: string;
   title?: string;

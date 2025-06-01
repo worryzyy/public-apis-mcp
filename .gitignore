@@ -1,0 +1,11 @@
+
+node_modules/
+
+dist/
+build/
+
+
+.idea/
+.vscode/
+
+package-lock.json
