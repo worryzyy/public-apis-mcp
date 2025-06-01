@@ -1,6 +1,6 @@
 {
   "name": "public-apis-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for accessing public APIs",
   "main": "dist/index.js",
   "type": "module",
@@ -44,9 +44,9 @@
     "@types/jest": "^29.5.0"
   },
   "keywords": [
-    "mcp", 
-    "api", 
-    "server", 
+    "mcp",
+    "api",
+    "server",
     "public-apis",
     "model-context-protocol",
     "ai-tools",
