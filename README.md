@@ -72,7 +72,7 @@ npm run dev
 	"mcpServers": {
 		"public-apis-mcp": {
 			"command": "npx",
-			"args": ["-y", "public-apis-mcp"]
+			"args": ["-y", "@weilei_kyle/public-apis-mcp"]
 		}
 	}
 }

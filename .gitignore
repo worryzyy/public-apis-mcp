@@ -7,5 +7,7 @@ build/
 
 .idea/
 .vscode/
+.cursor/
+.cursorignore
 
 package-lock.json
