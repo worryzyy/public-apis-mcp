@@ -204,7 +204,7 @@ npm run dev
 
 从 GitHub 仓库同步最新的 API 列表
 
-> **重要说明**: 此接口目前采用手动同步机制，将 [public-apis](https://github.com/public-apis/public-apis) 仓库的最新数据同步到本地服务器。这种设计确保了数据的稳定性和访问速度，避免了频繁请求 GitHub API 可能导致的限流问题。
+> **重要说明**: 此接口目前采用手动同步机制，将 [public-apis](https://github.com/public-apis/public-apis) 仓库的最新数据同步到本地服务器。主要是保证数据的稳定性和访问速度。
 
 **工作原理:**
 
