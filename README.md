@@ -15,6 +15,14 @@ Public APIs MCP Server 是一个专业的 MCP 服务器实现，旨在为开发�
 - 📊 **统计分析**: 提供详细的 API 数据统计和分析
 - 🔄 **实时同步**: 支持从 GitHub 仓库同步最新的 API 数据
 
+## 📸 预览展示
+
+![使用示例](https://weilei.site/images/public-apis/2.png)
+
+![使用示例](https://weilei.site/images/public-apis/1.png)
+
+![使用示例](https://weilei.site/images/public-apis/3.png)
+
 ## 📦 安装
 
 ### 环境要求
