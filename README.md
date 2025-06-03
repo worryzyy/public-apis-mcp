@@ -1,105 +1,107 @@
 # Public APIs MCP Server
 
-一个基于 Model Context Protocol (MCP) 的公共 API 服务器，提供对 [public-apis](https://github.com/public-apis/public-apis) 数据库的智能访问和管理功能。
+English | [中文](README-zh.md)
 
-## 🚀 项目简介
+A Model Context Protocol (MCP) server that provides intelligent access and management functionality for the [public-apis](https://github.com/public-apis/public-apis) database.
 
-Public APIs MCP Server 是一个专业的 MCP 服务器实现，旨在为开发者提供便捷的公共 API 发现、搜索和集成服务。通过标准化的 MCP 协议，您可以轻松地在各种 AI 助手和开发工具中集成丰富的公共 API 资源。
+## 🚀 Project Overview
 
-### 核心特性
+Public APIs MCP Server is a professional MCP server implementation designed to provide developers with convenient public API discovery, search, and integration services. Through the standardized MCP protocol, you can easily integrate rich public API resources into various AI assistants and development tools.
 
-- 🔍 **智能搜索**: 支持按分类、关键词、认证方式等多维度搜索 API
-- 🛡️ **安全筛选**: 提供 HTTPS 支持、CORS 配置等安全性筛选
-- 🎯 **智能推荐**: 基于项目需求智能推荐最适合的 API
-- 💻 **代码生成**: 自动生成多种编程语言的 API 集成代码
-- 📊 **统计分析**: 提供详细的 API 数据统计和分析
-- 🔄 **实时同步**: 支持从 GitHub 仓库同步最新的 API 数据
+### Core Features
 
-## 📸 预览展示
+- 🔍 **Smart Search**: Multi-dimensional API search by category, keywords, authentication method, etc.
+- 🛡️ **Security Filtering**: Security filtering including HTTPS support, CORS configuration, etc.
+- 🎯 **Smart Recommendations**: Intelligently recommend the most suitable APIs based on project requirements
+- 💻 **Code Generation**: Automatically generate API integration code in multiple programming languages
+- 📊 **Statistical Analysis**: Provide detailed API data statistics and analysis
+- 🔄 **Real-time Sync**: Support synchronizing the latest API data from GitHub repositories
 
-![使用示例](https://weilei.site/images/public-apis/2.png)
+## 📸 Preview
 
-![使用示例](https://weilei.site/images/public-apis/1.png)
+![Usage Example](https://weilei.site/images/public-apis/2.png)
 
-![使用示例](https://weilei.site/images/public-apis/3.png)
+![Usage Example](https://weilei.site/images/public-apis/1.png)
 
-## 📦 安装
+![Usage Example](https://weilei.site/images/public-apis/3.png)
 
-### 环境要求
+## 📦 Installation
+
+### Requirements
 
 - Node.js >= 18.0.0
 - npm >= 8.0.0
 
-### 快速安装
+### Quick Install
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/worryzyy/public-apis-mcp.git
 cd public-apis-mcp
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 构建项目
+# Build the project
 npm run build
 
-# 启动服务器
+# Start the server
 npm start
 ```
 
-### 开发模式
+### Development Mode
 
 ```bash
-# 开发模式启动（支持热重载）
+# Start in development mode (with hot reload)
 npm run dev
 ```
 
-## 🛠️ 使用方法
+## 🛠️ Usage
 
-### 基本配置
+### Basic Configuration
 
-服务器启动后，会通过标准输入/输出与 MCP 客户端进行通信。您可以在支持 MCP 协议的 AI 助手或开发工具中配置此服务器。
+After the server starts, it will communicate with MCP clients through standard input/output. You can configure this server in AI assistants or development tools that support the MCP protocol.
 
-### MCP 客户端配置示例
-
-```json
-{
-	"mcpServers": {
-		"public-apis-mcp": {
-			"command": "node",
-			"args": ["path/to/public-apis-mcp/dist/index.js"]
-		}
-	}
-}
-```
-
-或者
+### MCP Client Configuration Example
 
 ```json
 {
-	"mcpServers": {
-		"public-apis-mcp": {
-			"command": "npx",
-			"args": ["-y", "@weilei_kyle/public-apis-mcp"]
-		}
-	}
+  "mcpServers": {
+    "public-apis-mcp": {
+      "command": "node",
+      "args": ["path/to/public-apis-mcp/dist/index.js"]
+    }
+  }
 }
 ```
 
-## 🔧 可用工具
+Or
 
-### API 搜索和发现
+```json
+{
+  "mcpServers": {
+    "public-apis-mcp": {
+      "command": "npx",
+      "args": ["-y", "@weilei_kyle/public-apis-mcp"]
+    }
+  }
+}
+```
+
+## 🔧 Available Tools
+
+### API Search and Discovery
 
 #### `search_apis_by_category`
 
-根据分类搜索 API
+Search APIs by category
 
-**参数:**
+**Parameters:**
 
-- `category` (string, 必需): API 分类名称
-- `limit` (number, 可选): 返回结果数量限制，默认 10
+- `category` (string, required): API category name
+- `limit` (number, optional): Limit the number of results returned, default 10
 
-**示例:**
+**Example:**
 
 ```javascript
 {
@@ -110,218 +112,218 @@ npm run dev
 
 #### `search_apis_by_keyword`
 
-通过关键词搜索 API
+Search APIs by keyword
 
-**参数:**
+**Parameters:**
 
-- `keyword` (string, 必需): 搜索关键词
-- `limit` (number, 可选): 返回结果数量限制，默认 10
+- `keyword` (string, required): Search keyword
+- `limit` (number, optional): Limit the number of results returned, default 10
 
 #### `filter_apis_by_auth`
 
-根据认证要求筛选 API
+Filter APIs by authentication requirements
 
-**参数:**
+**Parameters:**
 
-- `authType` (string, 必需): 认证类型 (`No`, `apiKey`, `OAuth`, `X-Mashape-Key`, `User-Agent`)
-- `limit` (number, 可选): 返回结果数量限制，默认 10
+- `authType` (string, required): Authentication type (`No`, `apiKey`, `OAuth`, `X-Mashape-Key`, `User-Agent`)
+- `limit` (number, optional): Limit the number of results returned, default 10
 
 #### `filter_apis_by_https`
 
-筛选支持 HTTPS 的 API
+Filter APIs that support HTTPS
 
-**参数:**
+**Parameters:**
 
-- `httpsOnly` (boolean, 可选): 是否只返回支持 HTTPS 的 API，默认 true
-- `limit` (number, 可选): 返回结果数量限制，默认 10
+- `httpsOnly` (boolean, optional): Whether to return only APIs that support HTTPS, default true
+- `limit` (number, optional): Limit the number of results returned, default 10
 
 #### `filter_apis_by_cors`
 
-筛选支持跨域访问的 API
+Filter APIs that support cross-origin access
 
-**参数:**
+**Parameters:**
 
-- `corsSupport` (string, 必需): CORS 支持状态 (`yes`, `no`, `unknown`)
-- `limit` (number, 可选): 返回结果数量限制，默认 10
+- `corsSupport` (string, required): CORS support status (`yes`, `no`, `unknown`)
+- `limit` (number, optional): Limit the number of results returned, default 10
 
-### API 详情和统计
+### API Details and Statistics
 
 #### `get_api_details`
 
-获取特定 API 的详细信息
+Get detailed information for a specific API
 
-**参数:**
+**Parameters:**
 
-- `apiName` (string, 必需): API 名称
+- `apiName` (string, required): API name
 
 #### `get_category_list`
 
-获取所有可用的 API 分类列表
+Get a list of all available API categories
 
 #### `get_random_api`
 
-随机推荐一个 API
+Randomly recommend an API
 
-**参数:**
+**Parameters:**
 
-- `category` (string, 可选): 限制在特定分类内随机选择
+- `category` (string, optional): Limit random selection within a specific category
 
 #### `get_api_statistics`
 
-获取 API 数量统计信息
+Get API quantity statistics
 
 #### `analyze_auth_requirements`
 
-分析不同认证方式的 API 分布
+Analyze the distribution of APIs by different authentication methods
 
-### 智能推荐
+### Smart Recommendations
 
 #### `recommend_apis_for_project`
 
-根据项目需求推荐合适的 API
+Recommend suitable APIs based on project requirements
 
-**参数:**
+**Parameters:**
 
-- `projectType` (string, 必需): 项目类型描述
-- `requirements` (array, 可选): 项目需求列表
-- `limit` (number, 可选): 推荐 API 数量限制，默认 5
+- `projectType` (string, required): Project type description
+- `requirements` (array, optional): List of project requirements
+- `limit` (number, optional): Limit the number of recommended APIs, default 5
 
 #### `find_alternative_apis`
 
-寻找替代 API 选项
+Find alternative API options
 
-**参数:**
+**Parameters:**
 
-- `functionality` (string, 必需): 所需功能描述
-- `limit` (number, 可选): 返回结果数量限制，默认 5
+- `functionality` (string, required): Required functionality description
+- `limit` (number, optional): Limit the number of results returned, default 5
 
-### 代码生成
+### Code Generation
 
 #### `generate_api_integration_code`
 
-为选定的 API 生成集成代码示例
+Generate integration code examples for selected APIs
 
-**参数:**
+**Parameters:**
 
-- `apiName` (string, 必需): API 名称
-- `language` (string, 可选): 编程语言 (`javascript`, `python`, `curl`)，默认 javascript
+- `apiName` (string, required): API name
+- `language` (string, optional): Programming language (`javascript`, `python`, `curl`), default javascript
 
-### 数据管理
+### Data Management
 
 #### `sync_repository_data`
 
-从 GitHub 仓库同步最新的 API 列表
+Synchronize the latest API list from GitHub repository
 
-> **重要说明**: 此接口目前采用手动同步机制，将 [public-apis](https://github.com/public-apis/public-apis) 仓库的最新数据同步到本地服务器。主要是保证数据的稳定性和访问速度。
+> **Important Note**: This interface currently uses a manual synchronization mechanism to sync the latest data from the [public-apis](https://github.com/public-apis/public-apis) repository to the local server. This mainly ensures data stability and access speed.
 
-**工作原理:**
+**How it works:**
 
-- 手动触发从 GitHub 仓库拉取最新的 API 数据
-- 将数据缓存到本地服务器，提高查询性能
-- 支持增量更新和强制全量同步两种模式
-- 同步完成后会返回详细的同步状态报告
+- Manually trigger fetching the latest API data from the GitHub repository
+- Cache data to the local server to improve query performance
+- Support both incremental updates and forced full synchronization modes
+- Return detailed synchronization status reports after completion
 
-**参数:**
+**Parameters:**
 
-- `force` (boolean, 可选): 是否强制重新同步，默认 false
-  - `false`: 仅在数据过期时进行增量同步
-  - `true`: 强制进行全量数据同步，忽略本地缓存
+- `force` (boolean, optional): Whether to force re-synchronization, default false
+  - `false`: Only perform incremental synchronization when data is expired
+  - `true`: Force full data synchronization, ignoring local cache
 
-**使用建议:**
+**Usage Recommendations:**
 
-- 建议在首次使用前执行一次强制同步 (`force: true`)
-- 日常使用中可定期执行增量同步以获取最新数据
-- 如发现数据异常，可使用强制同步重置本地缓存
+- It's recommended to perform a forced synchronization (`force: true`) before first use
+- Periodically perform incremental synchronization during daily use to get the latest data
+- Use forced synchronization to reset local cache if data anomalies are found
 
 #### `check_new_apis`
 
-检查最近添加的新 API
+Check recently added new APIs
 
-**参数:**
+**Parameters:**
 
-- `days` (number, 可选): 检查最近几天的新增 API，默认 7 天
+- `days` (number, optional): Check new APIs added in recent days, default 7 days
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 public-apis-mcp/
 ├── src/
-│   ├── index.ts                    # 主入口文件
+│   ├── index.ts                    # Main entry file
 │   ├── server/
-│   │   └── server.ts              # MCP服务器实现
+│   │   └── server.ts              # MCP server implementation
 │   ├── services/
-│   │   ├── api-service.ts         # API数据管理服务
-│   │   ├── search-service.ts      # 搜索功能服务
-│   │   ├── tool-service.ts        # 工具调用处理服务
-│   │   ├── code-generation-service.ts  # 代码生成服务
-│   │   ├── recommendation-service.ts   # 推荐算法服务
-│   │   └── formatter-service.ts   # 数据格式化服务
+│   │   ├── api-service.ts         # API data management service
+│   │   ├── search-service.ts      # Search functionality service
+│   │   ├── tool-service.ts        # Tool call handling service
+│   │   ├── code-generation-service.ts  # Code generation service
+│   │   ├── recommendation-service.ts   # Recommendation algorithm service
+│   │   └── formatter-service.ts   # Data formatting service
 │   └── types/
-│       └── api.ts                 # TypeScript类型定义
-├── dist/                          # 编译输出目录
-├── package.json                   # 项目配置
-├── tsconfig.json                  # TypeScript配置
-└── README.md                      # 项目文档
+│       └── api.ts                 # TypeScript type definitions
+├── dist/                          # Compilation output directory
+├── package.json                   # Project configuration
+├── tsconfig.json                  # TypeScript configuration
+└── README.md                      # Project documentation
 ```
 
-## 🔧 开发
+## 🔧 Development
 
-### 技术栈
+### Tech Stack
 
-- **TypeScript**: 类型安全的 JavaScript 超集
-- **Node.js**: JavaScript 运行时环境
-- **MCP SDK**: Model Context Protocol 软件开发工具包
-- **Axios**: HTTP 客户端库
-- **Zod**: TypeScript 优先的模式验证库
+- **TypeScript**: Type-safe JavaScript superset
+- **Node.js**: JavaScript runtime environment
+- **MCP SDK**: Model Context Protocol software development kit
+- **Axios**: HTTP client library
+- **Zod**: TypeScript-first schema validation library
 
-### 构建和测试
+### Build and Test
 
 ```bash
-# 编译TypeScript
+# Compile TypeScript
 npm run build
 
-# 运行测试
+# Run tests
 npm test
 
-# 开发模式（热重载）
+# Development mode (hot reload)
 npm run dev
 ```
 
-### 代码规范
+### Code Standards
 
-项目遵循以下开发规范：
+The project follows these development standards:
 
-- 使用 TypeScript 进行类型安全开发
-- 采用模块化架构设计
-- 完善的错误处理机制
-- 详细的代码注释和文档
+- Use TypeScript for type-safe development
+- Adopt modular architecture design
+- Comprehensive error handling mechanisms
+- Detailed code comments and documentation
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request 来改进这个项目！
+Welcome to submit Issues and Pull Requests to improve this project!
 
-### 贡献流程
+### Contribution Process
 
-1. Fork 本仓库
-2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 Pull Request
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- [public-apis](https://github.com/public-apis/public-apis) - 提供丰富的公共 API 数据源
+- [public-apis](https://github.com/public-apis/public-apis) - Providing rich public API data sources
 
-## 📞 联系方式
+## 📞 Contact
 
-如有问题或建议，请通过以下方式联系：
+If you have questions or suggestions, please contact us through:
 
-- 提交 [GitHub Issue](https://github.com/worryzyy/public-apis-mcp/issues)
+- Submit a [GitHub Issue](https://github.com/worryzyy/public-apis-mcp/issues)
 
 ---
 
-**注意**: 本项目仍在积极开发中，API 可能会发生变化。建议在生产环境使用前仔细测试。
+**Note**: This project is still under active development, and APIs may change. It is recommended to test carefully before using in production environments.
